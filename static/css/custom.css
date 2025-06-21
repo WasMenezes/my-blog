@@ -1,0 +1,16 @@
+/* Custom CSS to increase avatar size with maximum quality */
+.author .author-avatar {
+    width: 200px !important;
+    height: 200px !important;
+    /* Força o navegador a usar a melhor qualidade possível */
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+    /* Suavização para melhor qualidade */
+    -ms-interpolation-mode: bicubic;
+    /* Remove qualquer filtro que possa estar degradando a imagem */
+    filter: none !important;
+    /* Garante que a imagem seja nítida */
+    image-rendering: high-quality;
+} 
