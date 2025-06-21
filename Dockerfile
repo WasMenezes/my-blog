@@ -1,5 +1,5 @@
 # Dockerfile para Blog Hugo - Was Menezes
-FROM klakegg/hugo:ext-alpine
+FROM klakegg/hugo:0.124.1-ext-alpine
 
 
 # Instalar dependências adicionais
