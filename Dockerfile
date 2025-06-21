@@ -1,5 +1,6 @@
 # Dockerfile para Blog Hugo - Was Menezes
-FROM klakegg/hugo:0.147.8-ext-alpine
+FROM klakegg/hugo:ext-alpine
+
 
 # Instalar dependências adicionais
 RUN apk add --no-cache \
