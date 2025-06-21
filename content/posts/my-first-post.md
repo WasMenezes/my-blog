@@ -4,7 +4,7 @@ draft = false
 title = 'Hello World'
 +++
 
- Madrugada de sábado 21/05/25 escrevo isso, configuro meu homelab e mostro a vocês: 
+ Madrugada de sábado 21/06/25 escrevo isso, configuro meu homelab e mostro a vocês: 
 
 Meu cachorro tomando banho
 ![Thor - Imagem via Static](/assets/thor.JPG)
