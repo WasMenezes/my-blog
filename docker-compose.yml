@@ -1,0 +1,49 @@
+version: '3.8'
+
+services:
+  hugo-blog:
+    build: .
+    image: wasmenezes-blog:latest
+    container_name: wasmenezes-hugo-blog
+    ports:
+      - "1313:1313"
+    volumes:
+      # Volume para desenvolvimento - permite editar arquivos no host
+      - ./content:/src/content
+      - ./static:/src/static
+      - ./assets:/src/assets
+      - ./layouts:/src/layouts
+      - ./hugo.toml:/src/hugo.toml
+      # Volume para preservar o site construído
+      - ./public:/src/public
+    environment:
+      - HUGO_ENV=development
+    networks:
+      - hugo-network
+    restart: unless-stopped
+    # Comando padrão para desenvolvimento
+    command: ["server"]
+
+  # Serviço para construir para produção
+  hugo-build:
+    build: .
+    image: wasmenezes-blog:latest
+    container_name: wasmenezes-hugo-build
+    volumes:
+      - .:/src
+    environment:
+      - HUGO_ENV=production
+    networks:
+      - hugo-network
+    command: ["build"]
+    profiles:
+      - build
+
+networks:
+  hugo-network:
+    driver: bridge
+
+# Volumes nomeados para persistência
+volumes:
+  hugo-public:
+    driver: local 
